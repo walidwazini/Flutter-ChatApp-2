@@ -1,4 +1,5 @@
 import 'package:chat_app_2/widgets/login.dart';
+import 'package:chat_app_2/widgets/register.dart';
 import 'package:flutter/material.dart';
 import 'package:chat_app_2/widgets/login.dart';
 
@@ -17,6 +18,7 @@ class MyApp extends StatelessWidget {
       home: LoginPage(),
       routes: {
         'Login' : (context) => LoginPage(),
+        'Register' : (context) => RegisterPage(),
       },
     );
   }

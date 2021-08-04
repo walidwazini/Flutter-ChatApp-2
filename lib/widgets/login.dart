@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'dart:ui';
 
 var color1 = Color.fromRGBO(190, 30, 90, 1);
 
@@ -12,30 +13,39 @@ class LoginPage extends StatelessWidget {
         backgroundColor: Color.fromRGBO(150, 40, 80, 1),
       ),
       body: Padding(
-        padding: const EdgeInsets.fromLTRB(50, 20, 50, 10),
+        padding: const EdgeInsets.fromLTRB(50,110,50,10),
         child: Center(
           child: Column(
             children: [
-              Text('Welcome to login'),
-              SizedBox(height: 140,),
               TextField(
-                decoration: InputDecoration(hintText: 'Email / username'),
+                decoration: InputDecoration(
+                  border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(20.0),
+                      borderSide:BorderSide(color: color1) ),
+                    hintText: '   Email / username',
+                ),
               ),
+              SizedBox(height: 15,),
               TextField(
-                decoration: InputDecoration(hintText: 'Password'),
+                decoration: InputDecoration(
+                    border: OutlineInputBorder(borderRadius: BorderRadius.circular(20.0)),
+                    hintText: '   Password'),
+                obscureText: true,
               ),
               SizedBox(height: 20,),
               ElevatedButton(onPressed: (){}, child: Text('Login'),
                 style: ElevatedButton.styleFrom(
                     primary: color1,
-                  minimumSize: Size(140.0,35.0),
+                  minimumSize: Size(160.0,35.0),
                 ),),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text('Didn\'t have and account?'),
                   TextButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.pushNamed(context, 'Register');
+                    },
                     child: Text('Register Now',
                       style: TextStyle(decoration: TextDecoration.underline, color: Colors.pink),),
                   )
