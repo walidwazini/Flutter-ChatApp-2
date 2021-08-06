@@ -1,7 +1,7 @@
+import 'package:chat_app_2/widgets/forgot_password.dart';
 import 'package:chat_app_2/widgets/login.dart';
 import 'package:chat_app_2/widgets/register.dart';
 import 'package:flutter/material.dart';
-import 'package:chat_app_2/widgets/login.dart';
 
 void main() {
   runApp(MyApp());
@@ -19,6 +19,7 @@ class MyApp extends StatelessWidget {
       routes: {
         'Login' : (context) => LoginPage(),
         'Register' : (context) => RegisterPage(),
+        'RecoverPassword' : (context) => ForgotPasswordPage(),
       },
     );
   }

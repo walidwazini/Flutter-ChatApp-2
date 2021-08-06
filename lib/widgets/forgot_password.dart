@@ -10,7 +10,14 @@ class ForgotPasswordPage extends StatelessWidget {
       appBar: AppBar(
         title: Text('Recovery Password'), backgroundColor: color1,
       ),
-      body: Text('Hello'),
+      body: Center(child: Column( mainAxisAlignment: MainAxisAlignment.center, children: [
+        TextField(
+          decoration: InputDecoration(hintText: ' Enter your email address'),
+        ),
+        ElevatedButton(onPressed: (){}, child: Text('Send Email'))
+      ],
+      ),
+      ),
     );
   }
 }

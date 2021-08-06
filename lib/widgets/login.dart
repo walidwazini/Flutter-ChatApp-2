@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'dart:ui';
+import 'package:google_fonts/google_fonts.dart';
 
 var color1 = Color.fromRGBO(190, 30, 90, 1);
 
@@ -9,7 +10,7 @@ class LoginPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(onPressed: () {}, icon: const Icon(Icons.menu)),
-        title: Text('Login Page'),
+        title: Text('Login Page', style: GoogleFonts.openSans( fontSize: 20), ),
         backgroundColor: Color.fromRGBO(150, 40, 80, 1),
       ),
       body: Padding(
@@ -33,7 +34,7 @@ class LoginPage extends StatelessWidget {
                 obscureText: true,
               ),
               SizedBox(height: 20,),
-              ElevatedButton(onPressed: (){}, child: Text('Login'),
+              ElevatedButton(onPressed: (){}, child: Text('Login', style: GoogleFonts.openSans(),),
                 style: ElevatedButton.styleFrom(
                     primary: color1,
                   minimumSize: Size(160.0,35.0),
@@ -52,7 +53,9 @@ class LoginPage extends StatelessWidget {
                 ],
               ),
               TextButton(
-                onPressed: (){},
+                onPressed: (){
+                  Navigator.pushNamed(context, 'RecoverPassword');
+                },
                 child: Text('Forgot Password'),
                 style: TextButton.styleFrom(primary: Color.fromRGBO(180, 40, 90, 1) ),
               ),
