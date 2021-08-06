@@ -15,51 +15,57 @@ class LoginPage extends StatelessWidget {
       ),
       body: Padding(
         padding: const EdgeInsets.fromLTRB(50,110,50,10),
-        child: Center(
-          child: Column(
-            children: [
-              TextField(
-                decoration: InputDecoration(
-                  border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(20.0),
-                      borderSide:BorderSide(color: color1) ),
-                    hintText: '   Email / username',
+        child: SingleChildScrollView(
+          child: Center(
+            child: Column(
+              children: [
+                TextField(
+                  decoration: InputDecoration(
+                    border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(20.0),
+                        borderSide:BorderSide(color: color1) ),
+                      hintText: '   Email / username',
+                  ),
                 ),
-              ),
-              SizedBox(height: 15,),
-              TextField(
-                decoration: InputDecoration(
-                    border: OutlineInputBorder(borderRadius: BorderRadius.circular(20.0)),
-                    hintText: '   Password'),
-                obscureText: true,
-              ),
-              SizedBox(height: 20,),
-              ElevatedButton(onPressed: (){}, child: Text('Login', style: GoogleFonts.openSans(),),
-                style: ElevatedButton.styleFrom(
-                    primary: color1,
-                  minimumSize: Size(160.0,35.0),
-                ),),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Text('Didn\'t have and account?'),
-                  TextButton(
-                    onPressed: () {
-                      Navigator.pushNamed(context, 'Register');
-                    },
-                    child: Text('Register Now',
-                      style: TextStyle(decoration: TextDecoration.underline, color: Colors.pink),),
-                  )
-                ],
-              ),
-              TextButton(
-                onPressed: (){
-                  Navigator.pushNamed(context, 'RecoverPassword');
-                },
-                child: Text('Forgot Password'),
-                style: TextButton.styleFrom(primary: Color.fromRGBO(180, 40, 90, 1) ),
-              ),
-            ],
+                SizedBox(height: 15,),
+                TextField(
+                  decoration: InputDecoration(
+                      border: OutlineInputBorder(borderRadius: BorderRadius.circular(20.0)),
+                      hintText: '   Password' ),
+                  obscureText: true,
+                ),
+                SizedBox(height: 20,),
+
+                // ----------------------     LOGIN BUTTON   ----------------------------
+                ElevatedButton(onPressed: (){
+                  Navigator.pushNamed(context, 'ChatList');
+                }, child: Text('Login', style: GoogleFonts.openSans(),),
+                  style: ElevatedButton.styleFrom(
+                      primary: color1,
+                    minimumSize: Size(160.0,35.0),
+                  ),),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text('Didn\'t have and account?'),
+                    TextButton(
+                      onPressed: () {
+                        Navigator.pushNamed(context, 'Register');
+                      },
+                      child: Text('Register Now',
+                        style: TextStyle(decoration: TextDecoration.underline, color: Colors.pink),),
+                    )
+                  ],
+                ),
+                TextButton(
+                  onPressed: (){
+                    Navigator.pushNamed(context, 'RecoverPassword');
+                  },
+                  child: Text('Forgot Password'),
+                  style: TextButton.styleFrom(primary: Color.fromRGBO(180, 40, 90, 1) ),
+                ),
+              ],
+            ),
           ),
         ),
       ),

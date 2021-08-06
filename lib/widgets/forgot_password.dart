@@ -11,10 +11,21 @@ class ForgotPasswordPage extends StatelessWidget {
         title: Text('Recovery Password'), backgroundColor: color1,
       ),
       body: Center(child: Column( mainAxisAlignment: MainAxisAlignment.center, children: [
-        TextField(
-          decoration: InputDecoration(hintText: ' Enter your email address'),
+        SizedBox( width: 300,
+          child: TextField(
+            decoration: InputDecoration(
+                border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(10.0),
+                    borderSide:BorderSide(color: color1) ),
+                hintText: ' Enter your email address'),
+          ),
         ),
-        ElevatedButton(onPressed: (){}, child: Text('Send Email'))
+        SizedBox(height: 12,),
+        ElevatedButton(onPressed: (){}, child: Text('Send Email'),
+            style: ElevatedButton.styleFrom(
+              primary: color1,
+              minimumSize: Size(165.0,35.0),
+            ))
       ],
       ),
       ),
