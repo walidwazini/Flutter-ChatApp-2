@@ -14,5 +14,20 @@ class MessageScreen extends StatelessWidget {
 }
 
 AppBar buildAppBar() {
-  return AppBar(title: Text('Testing'),);
+  return AppBar(
+    automaticallyImplyLeading: false,
+    title: Row(children: [
+      BackButton(),
+      CircleAvatar( backgroundImage: AssetImage('assets/images/person2.jpg'),),
+      SizedBox(width: 15,),
+      Column( crossAxisAlignment: CrossAxisAlignment.start, children: [
+        Text('Sarah', style: TextStyle(fontSize: 18),),
+        Text('Active now', style: TextStyle(fontSize: 12),),
+      ],)
+    ],),
+    actions: [
+      IconButton(onPressed: (){}, icon: Icon(Icons.local_phone)),
+      IconButton(onPressed: (){}, icon: Icon(Icons.videocam))
+    ],
+  );
 }

@@ -3,6 +3,7 @@ import 'dart:ui';
 import 'package:google_fonts/google_fonts.dart';
 
 var color1 = Color.fromRGBO(190, 30, 90, 1);
+var profile1 = 'assets/images/person1.jpg';
 
 class LoginPage extends StatelessWidget {
   @override
@@ -19,6 +20,7 @@ class LoginPage extends StatelessWidget {
           child: Center(
             child: Column(
               children: [
+                Image.asset(profile1,width: 40,),
                 TextField(
                   decoration: InputDecoration(
                     border: OutlineInputBorder(
