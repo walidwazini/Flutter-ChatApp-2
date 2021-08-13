@@ -2,11 +2,14 @@ import 'package:chat_app_2/widgets/chat_detail.dart';
 import 'package:chat_app_2/widgets/chat_list.dart';
 import 'package:chat_app_2/widgets/forgot_password.dart';
 import 'package:chat_app_2/widgets/login.dart';
-import 'package:chat_app_2/widgets/messages_screen.dart';
+// import 'package:chat_app_2/widgets/messages_screen.dart';
 import 'package:chat_app_2/widgets/register.dart';
 import 'package:flutter/material.dart';
+import 'package:firebase_core/firebase_core.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
   runApp(MyApp());
 }
 
@@ -26,7 +29,7 @@ class MyApp extends StatelessWidget {
       //     bodyText2: TextStyle(fontSize: 14.0, fontFamily: 'Hind'),
       //   ),
       // ),
-      home: MessageScreen(),
+      home: LoginPage(),
       routes: {
         'Login' : (context) => LoginPage(),
         'ChatList' : (context) => ChatListPage(),

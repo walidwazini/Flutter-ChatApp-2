@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 import 'dart:ui';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -41,6 +42,9 @@ class LoginPage extends StatelessWidget {
                 // ----------------------     LOGIN BUTTON   ----------------------------
                 ElevatedButton(onPressed: (){
                   Navigator.pushNamed(context, 'ChatList');
+                  Fluttertoast.showToast(
+                      msg: 'Succesful Login!', fontSize: 18, gravity: ToastGravity.TOP, toastLength: Toast.LENGTH_SHORT,
+                  );
                 }, child: Text('Login', style: GoogleFonts.openSans(),),
                   style: ElevatedButton.styleFrom(
                       primary: color1,

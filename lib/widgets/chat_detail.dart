@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'chat_input_field.dart';
 
 class ChatDetailPage extends StatefulWidget {
   // const ChatDetailPage({Key? key}) : super(key: key);
@@ -51,7 +52,9 @@ class _ChatDetailPageState extends State<ChatDetailPage> {
                 subtitle: Text(messages[position]['from']!),
               );
             }),
-          )
+          ),
+          Spacer(),
+          ChatInputField(),
         ],
       ),
     );
